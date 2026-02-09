@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Projects - Somayeh Yarahmadi | Power Systems Research & Development">
+    <meta name="description" content="Technical Projects - Somayeh Yarahmadi | Power Systems Engineering">
     <title>Projects | Somayeh Yarahmadi</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -26,312 +26,207 @@
     <!-- Page Header -->
     <section class="hero" style="padding: 4rem 2rem;">
         <div class="hero-content">
-            <h1 style="font-size: 3rem;">Research & Development Projects</h1>
-            <p class="tagline">Advancing Power Systems Technology Through Innovation & Applied Research</p>
+            <h1 style="font-size: 3rem;">Technical Projects</h1>
+            <p class="tagline">Power Systems Engineering & Grid Modernization Portfolio</p>
         </div>
     </section>
 
     <!-- Main Content -->
     <div class="container">
+        <div style="text-align: center; margin-bottom: 3rem; padding: 2rem; background: #F1F5F9; border-radius: 12px;">
+            <p style="font-size: 1.1rem; color: #64748B; line-height: 1.8;">
+                Representative projects demonstrating technical capabilities across transmission planning, protection systems,
+                renewable energy integration, SCADA/EMS, and grid modernization. Projects span utility-scale applications,
+                consulting engagements, and research collaborations.
+            </p>
+        </div>
+
         <div class="projects-grid">
             <!-- Project 1 -->
             <div class="project-card">
                 <div class="project-header">
-                    <h3>Grid-Forming Inverter Control for 100% Renewable Grids</h3>
+                    <h3>Transmission System Protection Coordination</h3>
                     <p class="project-description">
-                        Developed advanced control strategies for grid-forming inverters to provide synthetic inertia,
-                        voltage support, and fault ride-through capability. Validated performance through real-time
-                        hardware-in-the-loop (HIL) testing with RTDS. Achieved 40% improvement in grid stability
-                        metrics during high renewable penetration scenarios.
+                        Performed comprehensive protection coordination studies for high-voltage transmission substations.
+                        Conducted short-circuit analysis using ETAP and ASPEN software to determine fault current levels
+                        at various system locations. Developed time-current coordination curves for distance relays,
+                        differential relays, and overcurrent protection devices ensuring selective fault isolation per
+                        IEEE C37.2 standards. Validated relay settings for SEL, GE Multilin, and ABB IEDs through
+                        protection simulation and tested proper coordination under N-1 contingency scenarios.
                     </p>
-                    <div class="highlights">
-                        <strong>Impact:</strong> Enables utilities to safely integrate 500MW+ additional renewable capacity
-                    </div>
                     <div class="project-tech">
-                        <span class="tech-tag">Grid-Forming Control</span>
-                        <span class="tech-tag">RTDS/HIL Testing</span>
-                        <span class="tech-tag">PSCAD</span>
-                        <span class="tech-tag">MATLAB/Simulink</span>
+                        <span class="tech-tag">ETAP</span>
+                        <span class="tech-tag">ASPEN</span>
+                        <span class="tech-tag">Relay Coordination</span>
+                        <span class="tech-tag">IEEE C37.2</span>
+                        <span class="tech-tag">Short-Circuit Analysis</span>
                     </div>
-                </div>
-                <div class="project-links">
-                    <span style="color: #64748B; font-size: 0.9rem;">Funded by: DOE Solar Energy Technologies Office | $1.2M</span>
                 </div>
             </div>
 
             <!-- Project 2 -->
             <div class="project-card">
                 <div class="project-header">
-                    <h3>AI-Driven Microgrid Energy Management System</h3>
+                    <h3>Utility-Scale Renewable Energy Interconnection</h3>
                     <p class="project-description">
-                        Designed intelligent EMS using deep reinforcement learning for optimal dispatch of solar, storage,
-                        and grid power. Implemented real-time optimization considering electricity prices, load forecasts,
-                        and battery health. Deployed at university campus microgrid achieving 32% cost reduction and
-                        99.97% reliability.
+                        Supported interconnection studies for solar and wind generation facilities connecting to
+                        transmission and sub-transmission systems. Performed steady-state power flow analysis using
+                        PSS/E to evaluate voltage regulation, thermal loadings, and system losses. Conducted dynamic
+                        simulations to assess transient stability and voltage ride-through capability of inverter-based
+                        resources. Modeled generic renewable energy system models (REGC_A, REEC_B) per NERC requirements
+                        and evaluated compliance with IEEE 1547 grid support functions including volt-var and frequency-watt control.
                     </p>
-                    <div class="highlights">
-                        <strong>Impact:</strong> $280k annual savings | Scalable to commercial/industrial microgrids
-                    </div>
                     <div class="project-tech">
-                        <span class="tech-tag">Deep RL (DQN/A3C)</span>
-                        <span class="tech-tag">Python/TensorFlow</span>
-                        <span class="tech-tag">Time-Series Forecasting</span>
-                        <span class="tech-tag">Real-Time Optimization</span>
+                        <span class="tech-tag">PSS/E</span>
+                        <span class="tech-tag">IEEE 1547</span>
+                        <span class="tech-tag">NERC Standards</span>
+                        <span class="tech-tag">IBR Modeling</span>
+                        <span class="tech-tag">Dynamic Simulation</span>
                     </div>
-                </div>
-                <div class="project-links">
-                    <span style="color: #64748B; font-size: 0.9rem;">Funded by: NSF CISE | $850k</span>
                 </div>
             </div>
 
             <!-- Project 3 -->
             <div class="project-card">
                 <div class="project-header">
-                    <h3>50 MWh Utility-Scale Battery Energy Storage System</h3>
+                    <h3>SCADA System Design & IEC 61850 Implementation</h3>
                     <p class="project-description">
-                        Led technical design and optimization of grid-scale BESS for frequency regulation and energy
-                        arbitrage. Developed advanced state-of-charge balancing algorithms, thermal management system,
-                        and grid interface controls. Achieved 94% round-trip efficiency with projected $2.8M annual
-                        revenue stream.
+                        Contributed to design and configuration of substation automation systems using IEC 61850
+                        communication protocols. Developed substation configuration language (SCL) files defining
+                        intelligent electronic device (IED) data models, logical nodes, and GOOSE messaging for
+                        trip and status signals. Configured DNP3 and Modbus communication drivers for integration
+                        with master SCADA platforms. Implemented real-time data acquisition sequences and alarm
+                        management logic supporting operational monitoring and control applications.
                     </p>
-                    <div class="highlights">
-                        <strong>Impact:</strong> 18% IRR | Provides grid services to 100k+ homes
-                    </div>
                     <div class="project-tech">
-                        <span class="tech-tag">BESS Design</span>
-                        <span class="tech-tag">BMS Algorithms</span>
-                        <span class="tech-tag">Grid Services</span>
-                        <span class="tech-tag">Economic Dispatch</span>
+                        <span class="tech-tag">IEC 61850</span>
+                        <span class="tech-tag">DNP3</span>
+                        <span class="tech-tag">GOOSE Messaging</span>
+                        <span class="tech-tag">SCADA Systems</span>
+                        <span class="tech-tag">Substation Automation</span>
                     </div>
-                </div>
-                <div class="project-links">
-                    <span style="color: #64748B; font-size: 0.9rem;">Industry Partnership: Major Utility + Battery OEM | $3.5M</span>
                 </div>
             </div>
 
             <!-- Project 4 -->
             <div class="project-card">
                 <div class="project-header">
-                    <h3>SiC-Based 500kW Solar Inverter with 98.5% Efficiency</h3>
+                    <h3>Grid-Scale Energy Storage Integration Analysis</h3>
                     <p class="project-description">
-                        Designed three-level neutral-point-clamped (NPC) inverter using silicon carbide (SiC) MOSFETs
-                        for utility-scale solar applications. Optimized modulation strategy, thermal design, and EMI
-                        filtering. Exceeded CEC efficiency by 1.5% while reducing footprint by 25% compared to
-                        silicon-based designs.
+                        Participated in technical analysis for battery energy storage system (BESS) integration
+                        into transmission and distribution networks. Evaluated energy storage applications including
+                        frequency regulation, voltage support, and energy arbitrage. Performed power flow studies
+                        to assess voltage impacts and thermal constraints during charging and discharging cycles.
+                        Analyzed state-of-charge management strategies and developed operational control sequences
+                        for grid service provisioning. Modeled BESS inverter controls and grid-following/grid-forming
+                        capabilities using PSCAD electromagnetic transient simulation.
                     </p>
-                    <div class="highlights">
-                        <strong>Impact:</strong> Technology licensed to solar inverter manufacturer
-                    </div>
                     <div class="project-tech">
-                        <span class="tech-tag">SiC Power Devices</span>
-                        <span class="tech-tag">Three-Level NPC</span>
-                        <span class="tech-tag">PLECS Simulation</span>
-                        <span class="tech-tag">Prototype Testing</span>
+                        <span class="tech-tag">BESS Analysis</span>
+                        <span class="tech-tag">PSCAD</span>
+                        <span class="tech-tag">Frequency Regulation</span>
+                        <span class="tech-tag">Grid Services</span>
+                        <span class="tech-tag">Inverter Controls</span>
                     </div>
-                </div>
-                <div class="project-links">
-                    <span style="color: #64748B; font-size: 0.9rem;">Funded by: Texas Energy Institute | $620k</span>
                 </div>
             </div>
 
             <!-- Project 5 -->
             <div class="project-card">
                 <div class="project-header">
-                    <h3>Machine Learning for Solar/Wind Power Forecasting</h3>
+                    <h3>Load & Renewable Generation Forecasting</h3>
                     <p class="project-description">
-                        Developed ensemble ML models (LSTM, GRU, XGBoost) for short-term renewable energy forecasting
-                        with 95%+ accuracy at 1-hour horizon. Integrated weather data, historical generation, and
-                        satellite imagery. Deployed at 5 renewable plants totaling 800MW capacity, reducing curtailment
-                        by 25%.
+                        Developed probabilistic forecasting models for load demand and renewable generation using
+                        statistical and machine learning approaches. Implemented time-series models including ARIMA,
+                        exponential smoothing, and gradient boosting machines for day-ahead and hour-ahead predictions.
+                        Integrated numerical weather prediction (NWP) data including temperature, solar irradiance,
+                        and wind speed forecasts. Applied quantile regression techniques to estimate forecast uncertainty
+                        bounds supporting reserve requirement calculations and risk-aware dispatch optimization.
                     </p>
-                    <div class="highlights">
-                        <strong>Impact:</strong> $3.2M/year additional revenue through improved dispatch
-                    </div>
                     <div class="project-tech">
-                        <span class="tech-tag">LSTM/GRU Networks</span>
-                        <span class="tech-tag">XGBoost</span>
-                        <span class="tech-tag">Python/PyTorch</span>
-                        <span class="tech-tag">Time-Series ML</span>
+                        <span class="tech-tag">Time-Series Forecasting</span>
+                        <span class="tech-tag">Machine Learning</span>
+                        <span class="tech-tag">Python/MATLAB</span>
+                        <span class="tech-tag">Probabilistic Methods</span>
+                        <span class="tech-tag">Weather Integration</span>
                     </div>
-                </div>
-                <div class="project-links">
-                    <span style="color: #64748B; font-size: 0.9rem;">Industry Collaboration: Renewable Energy Developer | $450k</span>
                 </div>
             </div>
 
             <!-- Project 6 -->
             <div class="project-card">
                 <div class="project-header">
-                    <h3>Bidirectional 50kW EV Charger with V2G Capability</h3>
+                    <h3>Synchrophasor-Based Grid Monitoring Applications</h3>
                     <p class="project-description">
-                        Designed and prototyped DC fast charger enabling vehicle-to-grid (V2G) operation for demand
-                        response and grid support. Implemented advanced power factor correction, reactive power control,
-                        and bidirectional power flow with <2% THD. Demonstrated peak shaving saving $1,200/month per
-                        charger.
+                        Contributed to research and development of wide-area monitoring applications using phasor
+                        measurement unit (PMU) data. Processed high-resolution synchrophasor measurements (60 Hz sampling)
+                        for real-time grid state visualization and event detection. Applied signal processing techniques
+                        including wavelet transforms and Hilbert-Huang transform for transient analysis. Developed
+                        automated classification algorithms using supervised learning to identify fault events,
+                        capacitor switching, and transformer energization from voltage and current phasor time-series data.
                     </p>
-                    <div class="highlights">
-                        <strong>Impact:</strong> Patent pending | Technology demonstration at utility partner site
-                    </div>
                     <div class="project-tech">
-                        <span class="tech-tag">Bidirectional Charging</span>
-                        <span class="tech-tag">V2G Control</span>
-                        <span class="tech-tag">Power Quality</span>
-                        <span class="tech-tag">DSP Implementation</span>
+                        <span class="tech-tag">PMU/Synchrophasor</span>
+                        <span class="tech-tag">IEEE C37.118</span>
+                        <span class="tech-tag">Signal Processing</span>
+                        <span class="tech-tag">Event Classification</span>
+                        <span class="tech-tag">Wide-Area Monitoring</span>
                     </div>
-                </div>
-                <div class="project-links">
-                    <span style="color: #64748B; font-size: 0.9rem;">Funded by: DOE Vehicle Technologies Office | $950k</span>
                 </div>
             </div>
 
             <!-- Project 7 -->
             <div class="project-card">
                 <div class="project-header">
-                    <h3>230kV Transmission System Upgrade & Integration Study</h3>
+                    <h3>Power Quality Analysis & Harmonic Mitigation</h3>
                     <p class="project-description">
-                        Conducted comprehensive power system studies (load flow, short circuit, transient stability,
-                        protection coordination) for major transmission expansion serving 500k customers. Modeled
-                        2,000+ buses, validated N-1 contingency compliance, and recommended $45M in strategic upgrades
-                        to enable renewable integration.
+                        Performed power quality assessments for industrial facilities and distribution networks with
+                        high penetration of nonlinear loads and inverter-based resources. Conducted harmonic analysis
+                        using frequency scan methods to identify resonance conditions and evaluate total harmonic
+                        distortion (THD) levels. Designed passive and active filtering solutions for harmonic mitigation
+                        and reactive power compensation. Evaluated capacitor bank sizing and placement strategies to
+                        improve power factor while avoiding adverse harmonic interactions per IEEE 519 standards.
                     </p>
-                    <div class="highlights">
-                        <strong>Impact:</strong> Enabled 800MW renewable energy interconnections | Improved reliability
-                    </div>
                     <div class="project-tech">
-                        <span class="tech-tag">PSS/E</span>
+                        <span class="tech-tag">Power Quality</span>
+                        <span class="tech-tag">Harmonic Analysis</span>
+                        <span class="tech-tag">IEEE 519</span>
                         <span class="tech-tag">ETAP</span>
-                        <span class="tech-tag">Load Flow Analysis</span>
-                        <span class="tech-tag">Stability Studies</span>
+                        <span class="tech-tag">Filter Design</span>
                     </div>
-                </div>
-                <div class="project-links">
-                    <span style="color: #64748B; font-size: 0.9rem;">Consulting Project: Regional Transmission Operator | Confidential</span>
                 </div>
             </div>
 
             <!-- Project 8 -->
             <div class="project-card">
                 <div class="project-header">
-                    <h3>Resilient Microgrid for Critical Infrastructure</h3>
+                    <h3>Microgrid Design & Islanding Control</h3>
                     <p class="project-description">
-                        Designed resilient microgrid for hospital campus with solar, CHP, and battery storage ensuring
-                        7-day islanded operation during grid outages. Implemented seamless transition control, load
-                        prioritization, and black start capability. System maintained 99.99% uptime during 2 major
-                        grid disruptions.
+                        Supported technical design and control strategy development for microgrid systems capable
+                        of grid-connected and islanded operation. Analyzed load profiles and renewable generation
+                        characteristics to optimize distributed energy resource (DER) sizing using HOMER software.
+                        Developed seamless transition control logic for islanding and reconnection events maintaining
+                        frequency and voltage stability. Designed hierarchical control architecture including primary
+                        droop control, secondary frequency/voltage restoration, and tertiary economic dispatch optimization.
                     </p>
-                    <div class="highlights">
-                        <strong>Impact:</strong> Zero downtime for critical care facilities | Model for healthcare resilience
-                    </div>
                     <div class="project-tech">
-                        <span class="tech-tag">Microgrid Control</span>
-                        <span class="tech-tag">Islanding</span>
-                        <span class="tech-tag">Load Shedding</span>
-                        <span class="tech-tag">HOMER/Simulink</span>
+                        <span class="tech-tag">Microgrid Design</span>
+                        <span class="tech-tag">HOMER</span>
+                        <span class="tech-tag">Islanding Control</span>
+                        <span class="tech-tag">DER Integration</span>
+                        <span class="tech-tag">Black Start</span>
                     </div>
-                </div>
-                <div class="project-links">
-                    <span style="color: #64748B; font-size: 0.9rem;">Funded by: DOE Office of Electricity | $1.8M</span>
                 </div>
             </div>
+        </div>
 
-            <!-- Project 9 -->
-            <div class="project-card">
-                <div class="project-header">
-                    <h3>High-Frequency Transformer Design for Isolated DC/DC Converters</h3>
-                    <p class="project-description">
-                        Optimized magnetic design for 20kW dual-active-bridge (DAB) converter operating at 100kHz.
-                        Used finite element analysis (FEA) for core loss and thermal modeling. Achieved 30% volume
-                        reduction and 97.5% efficiency using nanocrystalline core material and optimized winding
-                        configuration.
-                    </p>
-                    <div class="highlights">
-                        <strong>Impact:</strong> Design adopted for commercial EV charger product line
-                    </div>
-                    <div class="project-tech">
-                        <span class="tech-tag">Magnetic Design</span>
-                        <span class="tech-tag">ANSYS Maxwell</span>
-                        <span class="tech-tag">DAB Converter</span>
-                        <span class="tech-tag">Thermal Analysis</span>
-                    </div>
-                </div>
-                <div class="project-links">
-                    <span style="color: #64748B; font-size: 0.9rem;">Industry Partnership: Power Electronics Manufacturer | $380k</span>
-                </div>
-            </div>
-
-            <!-- Project 10 -->
-            <div class="project-card">
-                <div class="project-header">
-                    <h3>Digital Twin for Real-Time Grid Operations & Planning</h3>
-                    <p class="project-description">
-                        Developed physics-based digital twin of distribution grid integrating SCADA data, AMI
-                        measurements, and weather feeds. Implemented real-time state estimation, contingency analysis,
-                        and predictive maintenance algorithms. Validated model accuracy within 2% of actual system
-                        measurements.
-                    </p>
-                    <div class="highlights">
-                        <strong>Impact:</strong> Reduced unplanned outages by 28% | Optimized grid operations
-                    </div>
-                    <div class="project-tech">
-                        <span class="tech-tag">Digital Twin</span>
-                        <span class="tech-tag">State Estimation</span>
-                        <span class="tech-tag">Python/Pandas</span>
-                        <span class="tech-tag">Real-Time Data</span>
-                    </div>
-                </div>
-                <div class="project-links">
-                    <span style="color: #64748B; font-size: 0.9rem;">Funded by: DOE Smart Grid Investment Grant | $2.1M</span>
-                </div>
-            </div>
-
-            <!-- Project 11 -->
-            <div class="project-card">
-                <div class="project-header">
-                    <h3>Harmonic Analysis & Power Quality Improvement for Industrial Facility</h3>
-                    <p class="project-description">
-                        Diagnosed severe harmonic distortion (12% THD) at manufacturing plant with large VFD loads and
-                        rooftop solar. Designed hybrid active/passive filtering solution reducing THD to <3% and
-                        correcting power factor to 0.98. Eliminated equipment failures and $180k annual penalty charges.
-                    </p>
-                    <div class="highlights">
-                        <strong>Impact:</strong> ROI in 14 months | Improved equipment lifespan by 40%
-                    </div>
-                    <div class="project-tech">
-                        <span class="tech-tag">Power Quality</span>
-                        <span class="tech-tag">Harmonic Analysis</span>
-                        <span class="tech-tag">Active Filtering</span>
-                        <span class="tech-tag">ETAP</span>
-                    </div>
-                </div>
-                <div class="project-links">
-                    <span style="color: #64748B; font-size: 0.9rem;">Consulting Project: Industrial Client | Confidential</span>
-                </div>
-            </div>
-
-            <!-- Project 12 -->
-            <div class="project-card">
-                <div class="project-header">
-                    <h3>Optimal Placement & Sizing of DERs in Distribution Networks</h3>
-                    <p class="project-description">
-                        Developed multi-objective optimization framework for strategic placement of distributed solar
-                        and storage in distribution grids. Objectives: minimize losses, improve voltage profile,
-                        maximize hosting capacity. Applied genetic algorithm (GA) and particle swarm optimization (PSO)
-                        to IEEE test systems and real utility feeder.
-                    </p>
-                    <div class="highlights">
-                        <strong>Impact:</strong> Published in IEEE Transactions | Adopted by 2 utilities for DER planning
-                    </div>
-                    <div class="project-tech">
-                        <span class="tech-tag">Optimization (GA/PSO)</span>
-                        <span class="tech-tag">DER Planning</span>
-                        <span class="tech-tag">MATLAB</span>
-                        <span class="tech-tag">OpenDSS</span>
-                    </div>
-                </div>
-                <div class="project-links">
-                    <span style="color: #64748B; font-size: 0.9rem;">Academic Research | Published in IEEE Transactions on Smart Grid</span>
-                </div>
-            </div>
+        <!-- Note Section -->
+        <div style="margin-top: 4rem; padding: 2rem; background: #F8FAFC; border-left: 4px solid #1E3A8A; border-radius: 8px;">
+            <p style="color: #64748B; font-size: 0.95rem; line-height: 1.8;">
+                <strong>Note:</strong> Project details are presented at a summary level to maintain confidentiality
+                of proprietary client information and utility operational data. Additional technical details and
+                specific deliverables can be discussed during interviews subject to non-disclosure requirements.
+            </p>
         </div>
     </div>
 
