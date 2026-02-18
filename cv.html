@@ -7,33 +7,404 @@
     <title>CV | Somayeh Yarahmadi</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        @media print {
-            .print-header {
-                display: block !important;
-                text-align: center;
-                margin-bottom: 2rem;
-                padding-bottom: 1rem;
-                border-bottom: 3px solid #F59E0B;
-            }
-            .print-header h1 {
-                color: #1E3A8A;
-                margin-bottom: 0.5rem;
-            }
-            .print-header .contact-row {
-                display: flex;
-                justify-content: center;
-                gap: 2rem;
-                font-size: 0.9rem;
-                color: #64748B;
-            }
+        /* CV Page Specific Styles */
+        body.cv-body {
+            background: #e8e8e8;
         }
-        .print-header {
+
+        .cv-paper {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #fff;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.15);
+            padding: 3rem 3.5rem;
+            min-height: 100vh;
+        }
+
+        /* CV Header */
+        .cv-header {
+            text-align: center;
+            padding-bottom: 1.25rem;
+            border-bottom: 2.5px solid #1E3A8A;
+            margin-bottom: 1.5rem;
+        }
+
+        .cv-header h1 {
+            font-family: 'Crimson Pro', 'Georgia', serif;
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #1E3A8A;
+            margin-bottom: 0.3rem;
+            letter-spacing: 0.5px;
+        }
+
+        .cv-header .cv-title {
+            font-size: 1.05rem;
+            color: #475569;
+            font-weight: 400;
+            margin-bottom: 0.75rem;
+        }
+
+        .cv-contact-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            font-size: 0.88rem;
+            color: #475569;
+        }
+
+        .cv-contact-row a {
+            color: #1E3A8A;
+            text-decoration: none;
+        }
+
+        .cv-contact-row a:hover {
+            text-decoration: underline;
+        }
+
+        .cv-contact-row .separator {
+            color: #CBD5E1;
+            margin: 0 0.25rem;
+        }
+
+        /* CV Section Headings */
+        .cv-paper h2.cv-section {
+            font-family: 'Crimson Pro', 'Georgia', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #1E3A8A;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border-bottom: 1.5px solid #1E3A8A;
+            padding-bottom: 0.35rem;
+            margin-bottom: 0.9rem;
+            margin-top: 1.4rem;
+            display: block;
+        }
+
+        .cv-paper h2.cv-section::after {
             display: none;
+        }
+
+        /* Professional Summary */
+        .cv-summary {
+            font-size: 0.92rem;
+            line-height: 1.65;
+            color: #334155;
+            margin-bottom: 0;
+        }
+
+        /* Experience Entries */
+        .cv-experience-entry {
+            margin-bottom: 1rem;
+        }
+
+        .cv-exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.15rem;
+        }
+
+        .cv-exp-header h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #1E293B;
+            margin: 0;
+        }
+
+        .cv-exp-header .cv-date {
+            font-size: 0.88rem;
+            color: #64748B;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .cv-exp-company {
+            font-size: 0.92rem;
+            color: #475569;
+            font-style: italic;
+            margin-bottom: 0.4rem;
+        }
+
+        .cv-exp-bullets {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .cv-exp-bullets li {
+            font-size: 0.88rem;
+            line-height: 1.55;
+            color: #334155;
+            padding-left: 1rem;
+            position: relative;
+            margin-bottom: 0.2rem;
+        }
+
+        .cv-exp-bullets li::before {
+            content: '\2022';
+            position: absolute;
+            left: 0;
+            color: #64748B;
+        }
+
+        /* Skills Section */
+        .cv-skills-row {
+            margin-bottom: 0.4rem;
+            font-size: 0.88rem;
+            line-height: 1.55;
+            color: #334155;
+        }
+
+        .cv-skills-row strong {
+            color: #1E293B;
+        }
+
+        /* Education Entry */
+        .cv-edu-entry {
+            margin-bottom: 0.6rem;
+        }
+
+        .cv-edu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .cv-edu-header h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #1E293B;
+            margin: 0;
+        }
+
+        .cv-edu-header .cv-date {
+            font-size: 0.88rem;
+            color: #64748B;
+            font-weight: 500;
+        }
+
+        .cv-edu-detail {
+            font-size: 0.88rem;
+            color: #475569;
+            font-style: italic;
+            margin-bottom: 0.15rem;
+        }
+
+        .cv-edu-focus {
+            font-size: 0.88rem;
+            color: #334155;
+        }
+
+        /* Publications */
+        .cv-pub-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .cv-pub-list li {
+            font-size: 0.86rem;
+            line-height: 1.6;
+            color: #334155;
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .cv-pub-list li .pub-num {
+            position: absolute;
+            left: 0;
+            color: #64748B;
+            font-weight: 600;
+        }
+
+        /* Professional Development */
+        .cv-dev-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .cv-dev-list li {
+            font-size: 0.88rem;
+            line-height: 1.55;
+            color: #334155;
+            padding-left: 1rem;
+            position: relative;
+            margin-bottom: 0.2rem;
+        }
+
+        .cv-dev-list li::before {
+            content: '\2022';
+            position: absolute;
+            left: 0;
+            color: #64748B;
+        }
+
+        /* Download Button */
+        .cv-download-bar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #1E3A8A;
+            padding: 0.75rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cv-download-bar span {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .cv-download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #F59E0B;
+            color: #1E293B;
+            border: none;
+            padding: 0.6rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .cv-download-btn:hover {
+            background: #D97706;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4);
+        }
+
+        .cv-download-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* ======== PRINT STYLES ======== */
+        @media print {
+            body.cv-body {
+                background: white;
+            }
+
+            nav, footer, .cv-download-bar {
+                display: none !important;
+            }
+
+            .cv-paper {
+                box-shadow: none;
+                padding: 0;
+                margin: 0;
+                max-width: 100%;
+            }
+
+            .cv-header {
+                padding-bottom: 0.6rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .cv-header h1 {
+                font-size: 22pt;
+            }
+
+            .cv-header .cv-title {
+                font-size: 10pt;
+            }
+
+            .cv-contact-row {
+                font-size: 9pt;
+            }
+
+            .cv-paper h2.cv-section {
+                font-size: 10.5pt;
+                margin-top: 0.8rem;
+                margin-bottom: 0.5rem;
+                padding-bottom: 0.2rem;
+            }
+
+            .cv-summary {
+                font-size: 9.5pt;
+                line-height: 1.5;
+            }
+
+            .cv-exp-header h3 {
+                font-size: 10pt;
+            }
+
+            .cv-exp-header .cv-date {
+                font-size: 9pt;
+            }
+
+            .cv-exp-company {
+                font-size: 9.5pt;
+            }
+
+            .cv-exp-bullets li {
+                font-size: 9pt;
+                line-height: 1.45;
+                margin-bottom: 0.1rem;
+            }
+
+            .cv-skills-row {
+                font-size: 9pt;
+                line-height: 1.45;
+                margin-bottom: 0.25rem;
+            }
+
+            .cv-edu-header h3 {
+                font-size: 10pt;
+            }
+
+            .cv-edu-detail, .cv-edu-focus {
+                font-size: 9pt;
+            }
+
+            .cv-pub-list li {
+                font-size: 8.5pt;
+                line-height: 1.45;
+                margin-bottom: 0.3rem;
+            }
+
+            .cv-dev-list li {
+                font-size: 9pt;
+            }
+
+            .cv-experience-entry {
+                margin-bottom: 0.7rem;
+                page-break-inside: avoid;
+            }
+
+            .cv-edu-entry {
+                page-break-inside: avoid;
+            }
+
+            @page {
+                margin: 0.6in 0.7in;
+            }
+
+            a {
+                color: #1E3A8A !important;
+                text-decoration: none !important;
+            }
+
+            /* Ensure everything is black-friendly */
+            .cv-exp-bullets li, .cv-skills-row, .cv-summary, .cv-pub-list li, .cv-dev-list li, .cv-edu-focus {
+                color: #1E293B !important;
+            }
         }
     </style>
 </head>
-<body>
+<body class="cv-body">
     <!-- Navigation -->
     <nav class="no-print">
         <div class="nav-container">
@@ -48,223 +419,145 @@
         </div>
     </nav>
 
-    <!-- Download Section -->
-    <div class="cv-download no-print">
-        <h2>Curriculum Vitae</h2>
-        <p style="font-size: 1.1rem; color: #64748B; margin: 1rem 0;">
-            View the complete CV below
+    <!-- Download Bar -->
+    <div class="cv-download-bar no-print">
+        <span>Curriculum Vitae</span>
+        <button class="cv-download-btn" onclick="window.print()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+            Download PDF
+        </button>
+    </div>
+
+    <!-- CV Document -->
+    <div class="cv-paper">
+
+        <!-- Header -->
+        <div class="cv-header">
+            <h1>Somayeh Yarahmadi, PhD</h1>
+            <div class="cv-title">Senior Power Systems Engineer</div>
+            <div class="cv-contact-row">
+                <a href="mailto:somayeh.yarahmadi@gmail.com">somayeh.yarahmadi@gmail.com</a>
+                <span class="separator">|</span>
+                <span>(979) 450-6535</span>
+                <span class="separator">|</span>
+                <span>San Jose, CA</span>
+                <span class="separator">|</span>
+                <a href="https://www.linkedin.com/in/syarahmadi/" target="_blank">linkedin.com/in/syarahmadi</a>
+                <span class="separator">|</span>
+                <a href="https://scholar.google.com/citations?user=ZFLTy4QAAAAJ&hl=ko" target="_blank">Google Scholar</a>
+            </div>
+        </div>
+
+        <!-- Professional Summary -->
+        <h2 class="cv-section">Professional Summary</h2>
+        <p class="cv-summary">
+            Power Systems Engineer with expertise in transmission planning, protection coordination, SCADA/EMS systems, and renewable energy interconnection. Extensive experience with PSS/E, PSLF, TARA, and ASPEN modeling, electromagnetic transient simulation, and grid automation technologies. Hands-on experience supporting data center power infrastructure, renewable energy integration, and inverter-based resources. Research background in applying machine learning to power system stability analysis and grid monitoring. Familiar with CAISO and ERCOT interconnection standards.
         </p>
-        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-            <button class="btn btn-primary" onclick="window.print()">
-                Print / Save as PDF
-            </button>
+
+        <!-- Professional Experience -->
+        <h2 class="cv-section">Professional Experience</h2>
+
+        <div class="cv-experience-entry">
+            <div class="cv-exp-header">
+                <h3>Senior Power Systems Engineer</h3>
+                <span class="cv-date">2024 &ndash; Present</span>
+            </div>
+            <div class="cv-exp-company">Siemens Energy &mdash; Grid Technologies Division, San Jose, CA</div>
+            <ul class="cv-exp-bullets">
+                <li>Designed and configured DNP3 and IEC 61850-based communication architectures for substation automation and SCADA/EMS platforms</li>
+                <li>Performed short-circuit analysis and relay coordination studies using ETAP and ASPEN for transmission substations per IEEE C37.2 and NERC PRC standards</li>
+                <li>Conducted steady-state and dynamic power system studies for utility-scale solar and wind projects using PSS/E and PowerFactory, including injection studies and voltage ride-through analysis</li>
+                <li>Developed and validated detailed and equivalent dynamic models to assess system behavior and failure scenarios under high renewable penetration</li>
+                <li>Conducted power system studies supporting data center power infrastructure, including fault performance and system recovery for high-reliability environments</li>
+                <li>Developed Python-based automation tools for batch processing of power system models, data extraction, and automated engineering report generation</li>
+                <li>Implemented IEC 61850 data models for IEDs including GOOSE messaging and Sampled Values; supported commissioning and field acceptance testing</li>
+            </ul>
         </div>
-    </div>
 
-    <!-- Print Header (Only visible when printing) -->
-    <div class="print-header">
-        <h1>Somayeh Yarahmadi, PhD</h1>
-        <div class="contact-row">
-            <span>somayeh.yarahmadi@gmail.com</span>
-            <span>•</span>
-            <span>(979) 450-6535</span>
-            <span>•</span>
-            <span>linkedin.com/in/syarahmadi</span>
+        <div class="cv-experience-entry">
+            <div class="cv-exp-header">
+                <h3>Power Systems Engineer</h3>
+                <span class="cv-date">2023 &ndash; 2024</span>
+            </div>
+            <div class="cv-exp-company">Power Engineers &mdash; Grid Planning & Analytics</div>
+            <ul class="cv-exp-bullets">
+                <li>Performed power flow, fault analysis, and transient stability studies for high-voltage transmission systems using PSS/E per NERC TPL standards</li>
+                <li>Led feasibility and system impact studies for utility-scale solar and wind projects; modeled inverter-based resources (REGC_A, REEC_B, REPC_A)</li>
+                <li>Developed probabilistic load forecasting models using ensemble methods combining regression, gradient boosting, and LSTM networks</li>
+                <li>Conducted generation and transmission outage coordination analysis; performed LOLE and EUE calculations per NERC/WECC methodologies</li>
+                <li>Applied machine learning models to enhance grid stability analysis, predict system vulnerabilities, and support proactive reliability assessment</li>
+                <li>Performed ERCOT MQT and CAISO interconnection studies using PSLF, PSS/E, and TARA for renewable resources connecting to T&D networks</li>
+                <li>Authored engineering studies, technical memoranda, and client presentations; supported regulatory filings and interconnection negotiations</li>
+            </ul>
         </div>
-    </div>
 
-    <!-- CV Content -->
-    <div class="container">
-        <div class="cv-content">
-            <!-- Professional Summary -->
-            <section>
-                <h2>Professional Summary</h2>
-                <p style="font-size: 1.05rem; line-height: 1.8; margin-top: 1.5rem;">
-                    <strong>Power Systems Engineer</strong> with expertise in <strong>transmission planning, protection
-                    coordination, SCADA/EMS systems, and renewable energy interconnection</strong>. Extensive experience
-                    with PSS/E, PSLF, TARA, and ASPEN modeling, electromagnetic transient simulation, and grid
-                    automation technologies. Hands-on experience supporting data center power infrastructure, renewable energy
-                    integration, and inverter-based resources, with a focus on resilient and scalable system design. Research background in applying machine learning to
-                    power system stability analysis and grid monitoring. Familiar with CAISO and ERCOT interconnection standards.
-                </p>
-            </section>
-
-            <!-- Core Competencies -->
-            <section style="margin-top: 3rem;">
-                <h2>Core Competencies</h2>
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 1.5rem;">
-                    <div>
-                        <strong style="color: #1E3A8A;">Power Systems</strong>
-                        <ul style="list-style: none; padding: 0; margin-top: 0.5rem; font-size: 0.95rem;">
-                            <li>• Grid Stability & Protection</li>
-                            <li>• SCADA/EMS Systems</li>
-                            <li>• Load Flow & Fault Analysis</li>
-                            <li>• Transmission Planning</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <strong style="color: #1E3A8A;">Renewable Energy</strong>
-                        <ul style="list-style: none; padding: 0; margin-top: 0.5rem; font-size: 0.95rem;">
-                            <li>• Solar/Wind Integration</li>
-                            <li>• Energy Forecasting (ML)</li>
-                            <li>• Grid-Forming Inverters</li>
-                            <li>• Distributed Energy Resources</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <strong style="color: #1E3A8A;">Power Electronics</strong>
-                        <ul style="list-style: none; padding: 0; margin-top: 0.5rem; font-size: 0.95rem;">
-                            <li>• DC/DC & AC/DC Converters</li>
-                            <li>• SiC/GaN Devices</li>
-                            <li>• EV Charging & V2G</li>
-                            <li>• Multi-level Inverters</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <strong style="color: #1E3A8A;">Energy Storage</strong>
-                        <ul style="list-style: none; padding: 0; margin-top: 0.5rem; font-size: 0.95rem;">
-                            <li>• BESS Design & Integration</li>
-                            <li>• Battery Management Systems</li>
-                            <li>• Grid Services & Arbitrage</li>
-                            <li>• Economic Dispatch</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <strong style="color: #1E3A8A;">Smart Grid & Microgrids</strong>
-                        <ul style="list-style: none; padding: 0; margin-top: 0.5rem; font-size: 0.95rem;">
-                            <li>• Microgrid Design & EMS</li>
-                            <li>• Islanding & Black Start</li>
-                            <li>• Demand Response</li>
-                            <li>• Grid Resilience</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <strong style="color: #1E3A8A;">Advanced Analytics</strong>
-                        <ul style="list-style: none; padding: 0; margin-top: 0.5rem; font-size: 0.95rem;">
-                            <li>• Load & Generation Forecasting</li>
-                            <li>• State Estimation</li>
-                            <li>• Optimization Algorithms</li>
-                            <li>• Data-Driven Analysis</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Education -->
-            <section style="margin-top: 3rem;">
-                <h2>Education</h2>
-                <div class="education-grid" style="margin-top: 1.5rem;">
-                    <div class="education-item">
-                        <h3>PhD in Electrical Engineering</h3>
-                        <div class="institution">Virginia Tech, Blacksburg, VA</div>
-                        <div class="period">Completed</div>
-                        <p style="margin-top: 0.75rem; font-size: 0.95rem;">
-                            <strong>Focus:</strong> Signal Processing, Robust Machine Learning, Computer Vision, Simulation Modeling for Power Systems
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Professional Experience (Summary) -->
-            <section style="margin-top: 3rem;">
-                <h2>Professional Experience Summary</h2>
-                <p style="margin-top: 1rem; margin-bottom: 1.5rem; font-size: 0.95rem; color: #64748B;">
-                    For detailed experience descriptions, please see the <a href="experience.html">Experience page</a>
-                </p>
-
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <span class="period">2024 - Present</span>
-                        <h3>Senior Power Systems Engineer</h3>
-                        <div class="company">Siemens Energy | Grid Technologies Division</div>
-                        <ul style="margin-top: 1rem; list-style: none; padding-left: 0;">
-                            <li>✓ Leading grid automation and SCADA/EMS system development for utility and data center clients</li>
-                            <li>✓ Conducting steady-state, short-circuit, dynamic, and transient stability analyses using PSS/E, TARA, and ASPEN</li>
-                            <li>✓ Developing Python-based automation tools for simulations, data extraction, and reporting</li>
-                        </ul>
-                    </div>
-
-                    <div class="timeline-item">
-                        <span class="period">2023 - 2024</span>
-                        <h3>Power Systems Engineer</h3>
-                        <div class="company">Power Engineers | Grid Planning & Analytics</div>
-                        <ul style="margin-top: 1rem; list-style: none; padding-left: 0;">
-                            <li>✓ Performed power system studies for T&D networks, renewable generation, and mission-critical facilities</li>
-                            <li>✓ Executed power flow, short-circuit, and ERCOT/CAISO interconnection studies using PSS/E, PSLF, and TARA</li>
-                            <li>✓ Applied machine learning models to enhance grid stability analysis and predict system vulnerabilities</li>
-                        </ul>
-                    </div>
-
-                    <div class="timeline-item">
-                        <span class="period">2018 - 2023</span>
-                        <h3>Graduate Research & Teaching Assistant</h3>
-                        <div class="company">Power and Energy Center (PEC) | Virginia Tech</div>
-                        <ul style="margin-top: 1rem; list-style: none; padding-left: 0;">
-                            <li>✓ Developed fault detection algorithms using PMU/synchrophasor data</li>
-                            <li>✓ Collaborated with utilities on protection system validation and field testing</li>
-                            <li>✓ Conducted EMT simulations in PSCAD for protection coordination studies</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Technical Skills -->
-            <section style="margin-top: 3rem;">
-                <h2>Technical Skills & Tools</h2>
-                <div style="margin-top: 1.5rem;">
-                    <div style="margin-bottom: 1.5rem;">
-                        <strong style="color: #1E3A8A;">Power System Analysis:</strong>
-                        <span style="margin-left: 0.5rem;">PSS/E, PSCAD/EMTDC, PSLF, TARA, ASPEN, ETAP, DIgSILENT PowerFactory, RTDS, OPAL-RT, OpenDSS</span>
-                    </div>
-                    <div style="margin-bottom: 1.5rem;">
-                        <strong style="color: #1E3A8A;">Machine Learning & Data Science:</strong>
-                        <span style="margin-left: 0.5rem;">Grid Stability Prediction, Vulnerability Assessment, Supervised Learning, Python Automation, Feature Engineering</span>
-                    </div>
-                    <div style="margin-bottom: 1.5rem;">
-                        <strong style="color: #1E3A8A;">Programming & Analysis:</strong>
-                        <span style="margin-left: 0.5rem;">Python (Pandas, NumPy, Scikit-learn), MATLAB/Simulink, SQL, Java, C/C++, Data Analysis, Automation Scripts</span>
-                    </div>
-                    <div style="margin-bottom: 1.5rem;">
-                        <strong style="color: #1E3A8A;">Power Electronics:</strong>
-                        <span style="margin-left: 0.5rem;">PLECS, LTspice, Altium Designer, ANSYS Maxwell, SiC/GaN Devices, DSP/FPGA (TI C2000)</span>
-                    </div>
-                    <div style="margin-bottom: 1.5rem;">
-                        <strong style="color: #1E3A8A;">Renewable Energy & Markets:</strong>
-                        <span style="margin-left: 0.5rem;">HOMER, SAM, PVsyst, Inverter Control, Energy Forecasting, DER Integration, CAISO & ERCOT Market Studies</span>
-                    </div>
-                    <div style="margin-bottom: 1.5rem;">
-                        <strong style="color: #1E3A8A;">Standards & Compliance:</strong>
-                        <span style="margin-left: 0.5rem;">IEEE 1547, NERC Standards, UL 1741, IEC 61850, CAISO & ERCOT Interconnection Standards, Grid Code Compliance</span>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Selected Publications -->
-            <section style="margin-top: 3rem;">
-                <h2>Selected Publications</h2>
-                <p style="margin-top: 1rem; margin-bottom: 1.5rem; font-size: 0.95rem; color: #64748B;">
-                    For a complete list, visit: <a href="https://scholar.google.com/citations?user=ZFLTy4QAAAAJ&hl=ko" target="_blank">Google Scholar Profile</a>
-                </p>
-                <ul style="margin-top: 1rem; line-height: 2; font-size: 0.95rem;">
-                    <li>P. Algikar, Y. Xu, <strong>S. Yarahmadi</strong>, L. Mili, "A Robust Data-driven Process Modeling Applied to Time-series Stochastic Power Flow," <em>IEEE Transactions on Power Systems</em>, Vol. 39, Issue 1, pp. 693-705, 2023.</li>
-                    <li><strong>S. Yarahmadi</strong>, P. Algikar, L. Mili, "Electromechanical Wave Propagation for Disturbance Arrival Time Assessment in Power Systems," <em>IEEE PES General Meeting (PESGM)</em>, 2023.</li>
-                    <li><strong>S. Yarahmadi</strong>, P. Algikar, L. Mili, "Electromechanical Wave Propagation Analysis in Power Systems," <em>IEEE PES Generation, Transmission and Distribution Conference</em>, 2022.</li>
-                    <li>S. Lei, D.A. Maldonado, E. Constantinescu, J. Zhao, <strong>S. Yarahmadi</strong>, L. Mili, M. Anitescu, "A Novel Continuum Approximation to Power System Electromechanical Dynamics," <em>IEEE PES Innovative Smart Grid Technologies (ISGT)</em>, 2022.</li>
-                </ul>
-                <p style="margin-top: 1rem; font-size: 0.95rem; color: #64748B;">
-                    <strong>Dissertation:</strong> "Electromechanical Wave Propagation in Power Systems," Virginia Tech, 2024.
-                </p>
-            </section>
-
-            <!-- Professional Development -->
-            <section style="margin-top: 3rem;">
-                <h2>Professional Development</h2>
-                <ul style="margin-top: 1.5rem; line-height: 2;">
-                    <li><strong>IEEE Member</strong> - Power & Energy Society (PES), Power Electronics Society (PELS)</li>
-                    <li><strong>Continuous Learning</strong> - Power system analysis, grid code standards (NERC, IEEE), protection engineering, renewable integration</li>
-                </ul>
-            </section>
+        <div class="cv-experience-entry">
+            <div class="cv-exp-header">
+                <h3>Graduate Research & Teaching Assistant</h3>
+                <span class="cv-date">2018 &ndash; 2023</span>
+            </div>
+            <div class="cv-exp-company">Power and Energy Center (PEC) &mdash; Virginia Tech, Blacksburg, VA</div>
+            <ul class="cv-exp-bullets">
+                <li>Developed continuum approximation approaches for electromechanical wave propagation modeling and power system dynamics analysis</li>
+                <li>Designed fault detection and classification algorithms using PMU measurements with wavelet transforms and machine learning (SVM, decision trees)</li>
+                <li>Conducted electromagnetic transient simulations in PSCAD/EMTDC for transmission line protection studies; validated relay settings against field data</li>
+                <li>Trained supervised learning models on labeled PMU datasets for event type identification supporting situational awareness applications</li>
+                <li>Collaborated with EPRI, DOE national labs, and regional transmission organizations on synchrophasor deployment and wide-area monitoring</li>
+                <li>Published research in IEEE Transactions on Power Systems and multiple IEEE PES conferences</li>
+            </ul>
         </div>
+
+        <!-- Technical Skills -->
+        <h2 class="cv-section">Technical Skills</h2>
+        <div class="cv-skills-row"><strong>Power System Analysis:</strong> PSS/E, PSCAD/EMTDC, PSLF, TARA, ASPEN, ETAP, DIgSILENT PowerFactory, RTDS, OPAL-RT, OpenDSS</div>
+        <div class="cv-skills-row"><strong>Programming & Analysis:</strong> Python (Pandas, NumPy, Scikit-learn), MATLAB/Simulink, SQL, Java, C/C++</div>
+        <div class="cv-skills-row"><strong>Machine Learning:</strong> Grid Stability Prediction, Supervised Learning, Feature Engineering, Vulnerability Assessment, Python Automation</div>
+        <div class="cv-skills-row"><strong>Standards & Compliance:</strong> IEEE 1547, IEEE C37.2, NERC TPL/MOD/PRC, IEC 61850, UL 1741, CAISO & ERCOT Interconnection Standards</div>
+        <div class="cv-skills-row"><strong>Renewable Energy & Markets:</strong> Inverter-Based Resource Modeling, BESS Integration, DER, CAISO & ERCOT Market Studies</div>
+        <div class="cv-skills-row"><strong>Tools & Platforms:</strong> SCADA/EMS (GE iFIX, OSI Monarch, Siemens Spectrum), Power BI, Tableau, Git</div>
+
+        <!-- Education -->
+        <h2 class="cv-section">Education</h2>
+        <div class="cv-edu-entry">
+            <div class="cv-edu-header">
+                <h3>PhD in Electrical Engineering</h3>
+                <span class="cv-date">2018 &ndash; 2023</span>
+            </div>
+            <div class="cv-edu-detail">Virginia Tech, Blacksburg, VA</div>
+            <div class="cv-edu-focus"><strong>Focus:</strong> Signal Processing, Machine Learning, Simulation Modeling for Power Systems</div>
+        </div>
+
+        <!-- Selected Publications -->
+        <h2 class="cv-section">Selected Publications</h2>
+        <ul class="cv-pub-list">
+            <li>
+                <span class="pub-num">[1]</span>
+                P. Algikar, Y. Xu, <strong>S. Yarahmadi</strong>, L. Mili, &ldquo;A Robust Data-driven Process Modeling Applied to Time-series Stochastic Power Flow,&rdquo; <em>IEEE Transactions on Power Systems</em>, Vol. 39, Issue 1, pp. 693&ndash;705, 2023.
+            </li>
+            <li>
+                <span class="pub-num">[2]</span>
+                <strong>S. Yarahmadi</strong>, P. Algikar, L. Mili, &ldquo;Electromechanical Wave Propagation for Disturbance Arrival Time Assessment in Power Systems,&rdquo; <em>IEEE PES General Meeting (PESGM)</em>, 2023.
+            </li>
+            <li>
+                <span class="pub-num">[3]</span>
+                <strong>S. Yarahmadi</strong>, P. Algikar, L. Mili, &ldquo;Electromechanical Wave Propagation Analysis in Power Systems,&rdquo; <em>IEEE PES Generation, Transmission and Distribution Conference</em>, 2022.
+            </li>
+            <li>
+                <span class="pub-num">[4]</span>
+                S. Lei, D.A. Maldonado, E. Constantinescu, J. Zhao, <strong>S. Yarahmadi</strong>, L. Mili, M. Anitescu, &ldquo;A Novel Continuum Approximation to Power System Electromechanical Dynamics,&rdquo; <em>IEEE PES Innovative Smart Grid Technologies (ISGT)</em>, 2022.
+            </li>
+        </ul>
+        <div class="cv-skills-row" style="margin-top: 0.3rem;">
+            <strong>Dissertation:</strong> &ldquo;Electromechanical Wave Propagation in Power Systems,&rdquo; Virginia Tech, 2024. &nbsp;|&nbsp;
+            Full list: <a href="https://scholar.google.com/citations?user=ZFLTy4QAAAAJ&hl=ko" target="_blank">Google Scholar</a>
+        </div>
+
+        <!-- Professional Affiliations -->
+        <h2 class="cv-section">Professional Affiliations</h2>
+        <ul class="cv-dev-list">
+            <li><strong>IEEE Member</strong> &mdash; Power & Energy Society (PES), Power Electronics Society (PELS)</li>
+        </ul>
+
     </div>
 
     <!-- Footer -->

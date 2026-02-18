@@ -720,10 +720,14 @@ footer {
     }
 }
 
-/* Print Styles for CV */
+/* Print Styles */
 @media print {
+    .no-print {
+        display: none !important;
+    }
+
     nav, footer, .cv-download {
-        display: none;
+        display: none !important;
     }
 
     body {
