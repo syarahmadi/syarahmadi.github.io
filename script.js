@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initMobileNav();
 });
 
-// Email obfuscation to prevent spam
+// Email obfuscation to prevent spam bots from scraping
 function obfuscateEmails() {
     const emailLinks = document.querySelectorAll('a[data-user][data-domain]');
     emailLinks.forEach(link => {
@@ -24,7 +24,9 @@ function obfuscateEmails() {
         if (user && domain) {
             const email = user + '@' + domain;
             link.href = 'mailto:' + email;
-            if (link.textContent.includes('@') === false) {
+            // Set display text if it's a text-only link (not an icon link)
+            const hasSvg = link.querySelector('svg');
+            if (!hasSvg) {
                 link.textContent = email;
             }
         }
